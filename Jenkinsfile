@@ -21,5 +21,15 @@ pipeline {
                 '''
             }
         }
+
+        stage('Test') {
+            steps {
+                sh '''
+                    pwd
+                    test -f build/index.html
+                    npm test
+                '''
+            }
+        }
     }
 }
