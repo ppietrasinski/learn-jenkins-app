@@ -33,7 +33,6 @@ pipeline {
             steps {
                 echo 'Test stage'
                 sh '''
-                    npm ci
                     test -f build/index.html
                     npm test
                 '''
