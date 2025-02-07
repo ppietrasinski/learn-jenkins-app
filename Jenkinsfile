@@ -2,6 +2,7 @@ pipeline {
     agent any
 
     stages {
+        /*
         stage('Build') {
             agent {
                 docker {
@@ -21,6 +22,7 @@ pipeline {
                 '''
             }
         }
+        */
 
         stage('Test') {
             agent {
@@ -52,7 +54,7 @@ pipeline {
                 sh '''
                     npm install serve
                     mode_modules/.bin/serve -s build &
-                    sleep 10
+                    sleep 20
                     npx playwright test
                 '''
             }
