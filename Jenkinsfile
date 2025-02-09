@@ -21,8 +21,8 @@ pipeline {
                     ls -la
                 '''
             }
-            */
         }
+        */
 
         stage('Test') {
             agent {
