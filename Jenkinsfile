@@ -2,6 +2,7 @@ pipeline {
     agent any
 
     stages {
+        /*
         stage('Build') {
             agent {
                 docker {
@@ -20,6 +21,7 @@ pipeline {
                     ls -la
                 '''
             }
+            */
         }
 
         stage('Test') {
@@ -51,7 +53,7 @@ pipeline {
                 echo 'E2E test stage'
                 sh '''
                     npm install serve
-                    mode_modules/.bin/serve -s build &
+                    node_modules/.bin/serve -s build &
                     sleep 20
                     npx playwright test
                 '''
